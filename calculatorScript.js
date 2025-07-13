@@ -9,7 +9,15 @@ let button_mult = document.getElementById("button_mult");
 let button_sub = document.getElementById("button_sub");
 let equal = document.getElementById("equal");
 
+// vars
+let equalPressed = false;
+
 function addToDisplay(numOrOperator) {
+    if (equalPressed){
+        resultField.textContent = "0";
+        equalPressed = false;
+    }
+
     if (resultField.textContent != "0") {
         resultField.textContent += numOrOperator;
     }
@@ -73,12 +81,13 @@ button_mult.addEventListener('click', () => {
     addToDisplay("*");
 })
 
-button_sub.addEventListener('click', ()=> {
+button_sub.addEventListener('click', () => {
     addToDisplay("-");
 })
 
 equal.addEventListener('click', () => {
     resultField.textContent = eval(resultField.textContent);
+    equalPressed = true;
 })
 
 cancel.addEventListener('click', () => {
