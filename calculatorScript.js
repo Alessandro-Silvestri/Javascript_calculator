@@ -1,3 +1,9 @@
+/*
+    JavaScript Calculator
+    Author: Alessandro Silvestri <alessandro.silvestri.work@gmail.com>
+    2025
+*/
+
 // Dom elements conversion
 let button_1 = document.getElementById("button_1");
 let button_2 = document.getElementById("button_2");
@@ -13,7 +19,7 @@ let equal = document.getElementById("equal");
 let equalPressed = false;
 
 function addToDisplay(numOrOperator) {
-    if (equalPressed){
+    if (equalPressed) {
         resultField.textContent = "0";
         equalPressed = false;
     }
@@ -68,7 +74,7 @@ button_0.addEventListener('click', () => {
 })
 
 
-// operators actions
+// operators
 button_Add.addEventListener('click', () => {
     addToDisplay("+");
 })
