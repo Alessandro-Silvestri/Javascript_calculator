@@ -14,9 +14,12 @@ let button_divide = document.getElementById("button_divide");
 let button_mult = document.getElementById("button_mult");
 let button_sub = document.getElementById("button_sub");
 let equal = document.getElementById("equal");
+let button_mAdd = document.getElementById("button_mAdd");
+let button_mr = document.getElementById("button_mr");
 
 // vars
 let equalPressed = false;
+let mem = 0;
 
 function addToDisplay(numOrOperator) {
     if (equalPressed) {
@@ -95,6 +98,17 @@ equal.addEventListener('click', () => {
     resultField.textContent = eval(resultField.textContent);
     equalPressed = true;
 })
+
+//////////// mem buttons
+button_mAdd.addEventListener('click', () => {
+    mem += eval(resultField.textContent);
+})
+
+button_mr.addEventListener('click', () => {
+    addToDisplay(mem);
+})
+
+//////////////////////////////////
 
 cancel.addEventListener('click', () => {
     resultField.textContent = "0";
